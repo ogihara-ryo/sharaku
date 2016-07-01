@@ -38,13 +38,14 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'rspec-rails'
+  gem 'guard'
+  gem 'guard-rubocop'
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
 end
 
 group :development do
-  gem 'guard'
-  gem 'terminal-notifier-guard'
   gem 'rubocop'
-  gem 'guard-rubocop'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
