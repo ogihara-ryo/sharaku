@@ -1,0 +1,35 @@
+box: ruby:2.3.1
+
+services:
+  - id: postgres
+    env:
+      POSTGRES_PASSWORD: secret_password
+
+build:
+  steps:
+    - script:
+      name: Bundler setting
+      code: bundle config build.nokogiri --use-system-libraries
+
+    - bundle-install
+
+    - rails-database-yml:
+      service: postgresql-docker
+
+    - script:
+      name: Set up DB
+      code: RAILS_ENV=test bundle exec rake db:schema:load
+
+    - script:
+      name: Run rspecs
+      code: bundle exec rspec
+
+deploy:
+  steps:
+    - heroku-deploy:
+      install-toolbelt: true
+      key-name: HEROKU_KEY_PAIR
+
+    - script:
+      name: Update database
+      code: heroku run rake db:migrate --app $HEROKU_APP_NAME
