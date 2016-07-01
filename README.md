@@ -14,5 +14,10 @@ rails db:create
 rails db:migrate
 ```
 
+## デプロイ
+
+develop ブランチを変更すると、wercker により自動でデプロイされます。  
+[https://sharaku-staging.herokuapp.com](https://sharaku-staging.herokuapp.com)
+
 ## ライセンス
 [MIT License](https://github.com/ogihara-ryo/sharaku/blob/develop/LICENSE)
