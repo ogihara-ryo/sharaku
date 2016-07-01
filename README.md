@@ -1,24 +1,15 @@
-# README
+# 社絡
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 開発環境
 
-Things you may want to cover:
+- Ruby 2.3.1
+- Rails 5.0.0
 
-* Ruby version
+## インストール
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+cp config/database.yml.example config/database.yml
+bundle
+rails db:create
+rails db:migrate
+```
