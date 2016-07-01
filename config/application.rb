@@ -26,7 +26,7 @@ module Sharaku
       g.assets false
       g.helper false
       g.template_engine :slim
-      g.test_framework :rspec
+      g.test_framework :rspec, view_specs: false
     end
   end
 end
