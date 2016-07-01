@@ -13,3 +13,6 @@ bundle
 rails db:create
 rails db:migrate
 ```
+
+## ライセンス
+[MIT License](https://github.com/ogihara-ryo/sharaku/blob/develop/LICENSE)
