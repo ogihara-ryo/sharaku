@@ -1,3 +1,10 @@
+# == Route Map
+#
+#        Prefix Verb URI Pattern              Controller#Action
+# welcome_index GET  /welcome/index(.:format) welcome#index
+#          root GET  /                        welcome#index
+#
+
 Rails.application.routes.draw do
   get 'welcome/index'
 
