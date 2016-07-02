@@ -47,6 +47,12 @@ RSpec.describe User, type: :model do
           is_expected.not_to be_valid
         end
       end
+
+      it 'expect to reject duplicate email addresses' do
+        create(:user, email: 'Uniqueness@Example.com')
+        user.email = 'uniqueness@example.com'
+        is_expected.not_to be_valid
+      end
     end
   end
 end
