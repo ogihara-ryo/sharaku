@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
       end
 
       it 'expect to accept valid email addresses' do
-        addresses = %w(user@example.com THE_USER@foo.bar.org first.last@foo.jp)
+        addresses = %w(user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn)
         addresses.each do |address|
           user.email = address
           is_expected.to be_valid
@@ -41,7 +41,7 @@ RSpec.describe User, type: :model do
       end
 
       it 'expect to reject invalid email addresses' do
-        addresses = %w(user@example,com user_at_foo.org example.user@foo.)
+        addresses = %w(user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com foo@bar..com)
         addresses.each do |address|
           user.email = address
           is_expected.not_to be_valid
