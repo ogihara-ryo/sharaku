@@ -48,6 +48,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
   gem 'spring-commands-rspec'
+  gem 'factory_girl_rails'
 end
 
 group :development do
