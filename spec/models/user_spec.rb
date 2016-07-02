@@ -53,4 +53,11 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'callbacks' do
+    it 'Convert the e-mail address to lower case before saving' do
+      user = create(:user, email: 'User@Example.com')
+      expect(user.email).to eq 'user@example.com'
+    end
+  end
 end

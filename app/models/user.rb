@@ -14,5 +14,8 @@ class User < ApplicationRecord
             presence: true,
             format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i },
             uniqueness: { case_sensitive: false }
+
   has_secure_password
+
+  before_save { self.email = email.downcase }
 end
