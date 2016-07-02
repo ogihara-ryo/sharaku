@@ -18,6 +18,8 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to(:password_digest) }
     it { is_expected.to respond_to(:password) }
     it { is_expected.to respond_to(:password_confirmation) }
+    it { is_expected.to respond_to(:created_at) }
+    it { is_expected.to respond_to(:updated_at) }
   end
 
   describe 'validates' do
