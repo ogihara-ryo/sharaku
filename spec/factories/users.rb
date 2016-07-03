@@ -16,5 +16,7 @@ FactoryGirl.define do
     sequence(:email) { |i| "user_#{i}@example.com" }
     password 'password'
     password_confirmation 'password'
+    sequence(:first_name) { |i| "first_name_#{i}" }
+    sequence(:last_name) { |i| "last_name_#{i}" }
   end
 end
