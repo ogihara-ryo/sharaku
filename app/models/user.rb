@@ -7,6 +7,7 @@
 #  password_digest :string
 #  first_name      :string
 #  last_name       :string
+#  admin           :boolean          default(FALSE), not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
