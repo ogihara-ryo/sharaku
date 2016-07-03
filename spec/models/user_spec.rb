@@ -56,6 +56,17 @@ RSpec.describe User, type: :model do
     end
 
     describe 'password' do
+      it 'Expect to require a password' do
+        user.password = user.password_confirmation = ''
+        is_expected.not_to be_valid
+      end
+
+      it 'Expect to require a matching password confirmation' do
+        user.password = 'password'
+        user.password_confirmation = 'PASSWORD'
+        is_expected.not_to be_valid
+      end
+
       it 'expect to reject short password' do
         user.password = user.password_confirmation = 'a' * 7
         is_expected.not_to be_valid
