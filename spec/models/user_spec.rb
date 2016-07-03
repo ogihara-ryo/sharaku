@@ -76,6 +76,20 @@ RSpec.describe User, type: :model do
         is_expected.not_to be_valid
       end
     end
+
+    describe 'first_name' do
+      it 'Expect to require a first name' do
+        user.first_name = ''
+        is_expected.not_to be_valid
+      end
+    end
+
+    describe 'last_name' do
+      it 'Expect to require a last name' do
+        user.last_name = ''
+        is_expected.not_to be_valid
+      end
+    end
   end
 
   describe 'callbacks' do

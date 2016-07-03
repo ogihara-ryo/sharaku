@@ -17,6 +17,8 @@ class User < ApplicationRecord
             format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i },
             uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 8 }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   has_secure_password
 
