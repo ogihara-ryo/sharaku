@@ -29,4 +29,18 @@ RSpec.describe Group, type: :model do
       it { is_expected.to include user }
     end
   end
+
+  describe 'validates' do
+    subject { group }
+    let(:group) { create(:group) }
+
+    it { is_expected.to be_valid }
+
+    describe 'name' do
+      it 'expect to require a name' do
+        group.name = ''
+        is_expected.not_to be_valid
+      end
+    end
+  end
 end
