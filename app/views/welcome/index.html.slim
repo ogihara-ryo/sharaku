@@ -1,1 +1,83 @@
-p Sharaku
+header
+  nav.navbar-inverse
+    .container-fluid
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed type='button' data-toggle='collapse' data-target='#navbar' aria-expanded='false'
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          = link_to '', root_path, class: 'navbar-brand'
+
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li = link_to '#' do
+              span.glyphicon.glyphicon-user
+              = ' 社員'
+
+            li = link_to '#' do
+              span.glyphicon.glyphicon-pencil
+              = ' 掲示板'
+
+            li = link_to '#' do
+              span.glyphicon.glyphicon-ok
+              = ' タスク'
+
+            li = link_to '#' do
+              span.glyphicon.glyphicon-time
+              = ' スケジュール'
+
+          ul.nav.navbar-nav.navbar-right
+            li = link_to '#' do
+              span.glyphicon.glyphicon-cog
+              = ' 管理者メニュー'
+
+            li = link_to '#' do
+              span.glyphicon.glyphicon-log-out
+              = ' サインアウト'
+
+article.container
+  section
+    h4 スケジュール
+    .visible-md.visible-lg.visible-sm
+      table.table.table-bordered
+        tbody
+          tr
+            - 1.upto(7) do |i|
+              td style="background: #{[nil, nil, nil, nil, nil, '#ecf5ff', '#fcecec'][i - 1]}"
+                div.small = "#{i}日(#{%w(月 火 水 木 金 土 日)[i - 1]})"
+                = link_to "1#{i}時 #{%w(会議 打ち合わせ x x 出張:東京(xxxx様))[i - 1]}", '#' if [1, 2, 5].include?(i)
+                - if i == 1
+                  br
+                  = link_to "16時: 期限: xxxx見積書確認", '#', class: 'text-danger'
+
+    ul.visible-xs
+      li = link_to '1日(月) 11時: 会議', '#'
+      li = link_to '1日(月) 16時: 期限: xxxx見積書確認', '#'
+      li = link_to '2日(火) 12時: 打ち合わせ', '#'
+      li = link_to '5日(金) 15時: 出張:東京(xxxx様)', '#', class: 'text-danger'
+
+    h4 最近の掲示板投稿
+    table.table
+      tbody
+        tr
+          td.visible-md.visible-lg.visible-sm = link_to '全社員連絡', '#'
+          td = link_to '掲示タイトル', '#'
+          td 荻原 涼
+          td.visible-md.visible-lg.visible-sm 2016/7/17(月) 15:53
+
+        tr.danger
+          td.visible-md.visible-lg.visible-sm = link_to '共通', '#'
+          td = link_to '労働条件通知について', '#'
+          td 荻原 涼
+          td.visible-md.visible-lg.visible-sm 2016/7/14(金) 10:22
+
+        - 1.upto(3) do
+          tr
+            td.visible-md.visible-lg.visible-sm = link_to 'XX', '#'
+            td = link_to 'XXXXXXXXXXXXXXXXXXXXXXXXXXX...', '#'
+            td 荻原 涼
+            td.visible-md.visible-lg.visible-sm yyyy/mm/dd(a) hh:nn
+
+footer
