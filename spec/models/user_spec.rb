@@ -23,6 +23,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to(:password_confirmation) }
     it { is_expected.to respond_to(:first_name) }
     it { is_expected.to respond_to(:last_name) }
+    it { is_expected.to respond_to(:admin) }
     it { is_expected.to respond_to(:created_at) }
     it { is_expected.to respond_to(:updated_at) }
   end
