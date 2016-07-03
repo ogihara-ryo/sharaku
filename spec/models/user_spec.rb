@@ -54,6 +54,13 @@ RSpec.describe User, type: :model do
         is_expected.not_to be_valid
       end
     end
+
+    describe 'password' do
+      it 'expect to reject short password' do
+        user.password = user.password_confirmation = 'a' * 7
+        is_expected.not_to be_valid
+      end
+    end
   end
 
   describe 'callbacks' do
