@@ -47,7 +47,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to be_valid }
 
     describe 'email' do
-      it 'expect require an email address' do
+      it 'expect to require an email address' do
         user.email = ''
         is_expected.not_to be_valid
       end
