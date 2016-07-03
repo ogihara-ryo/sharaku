@@ -5,6 +5,8 @@
 #  id              :integer          not null, primary key
 #  email           :string
 #  password_digest :string
+#  first_name      :string
+#  last_name       :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -18,6 +20,8 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to(:password_digest) }
     it { is_expected.to respond_to(:password) }
     it { is_expected.to respond_to(:password_confirmation) }
+    it { is_expected.to respond_to(:first_name) }
+    it { is_expected.to respond_to(:last_name) }
     it { is_expected.to respond_to(:created_at) }
     it { is_expected.to respond_to(:updated_at) }
   end
