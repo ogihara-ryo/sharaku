@@ -13,6 +13,9 @@
 #
 
 class User < ApplicationRecord
+  has_many :group_members
+  has_many :groups, through: :group_members
+
   validates :email,
             presence: true,
             format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i },

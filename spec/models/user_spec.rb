@@ -28,6 +28,18 @@ RSpec.describe User, type: :model do
     it { is_expected.to respond_to(:updated_at) }
   end
 
+  describe 'Association' do
+    describe 'has_many :groups' do
+      subject { user.groups }
+
+      let(:group) { create(:group) }
+      let(:user) { create(:user) }
+
+      before { user.groups << group }
+      it { is_expected.to include group }
+    end
+  end
+
   describe 'validates' do
     subject { user }
     let(:user) { create(:user) }
