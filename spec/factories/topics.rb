@@ -13,8 +13,8 @@
 
 FactoryGirl.define do
   factory :topic do
-    author create(:user)
-    category create(:topic_category)
+    association :author, factory: :user
+    association :category, factory: :topic_category
     sequence(:title) { |i| "topic_#{i}" }
     sequence(:description) { |i| "description_#{i}" }
   end
