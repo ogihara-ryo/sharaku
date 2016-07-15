@@ -9,4 +9,5 @@
 #
 
 class TopicCategory < ApplicationRecord
+  has_many :topics, foreign_key: :category_id
 end
