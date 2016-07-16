@@ -15,6 +15,7 @@
 class User < ApplicationRecord
   has_many :group_members
   has_many :groups, through: :group_members
+  has_many :topics, foreign_key: :author_id
 
   validates :email,
             presence: true,

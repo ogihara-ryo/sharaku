@@ -38,6 +38,16 @@ RSpec.describe User, type: :model do
       before { user.groups << group }
       it { is_expected.to include group }
     end
+
+    describe 'has_many :topics' do
+      subject { user.topics }
+
+      let(:topic) { create(:topic) }
+      let(:user) { create(:user) }
+
+      before { user.topics << topic }
+      it { is_expected.to include topic }
+    end
   end
 
   describe 'validates' do
