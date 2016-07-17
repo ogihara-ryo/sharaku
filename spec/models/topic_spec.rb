@@ -33,5 +33,14 @@ RSpec.describe Topic, type: :model do
 
       it { is_expected.to eq category }
     end
+
+    describe 'belongs_to :author' do
+      subject { topic.author }
+
+      let(:author) { create(:user) }
+      let(:topic) { create(:topic, author: author) }
+
+      it { is_expected.to eq author }
+    end
   end
 end
