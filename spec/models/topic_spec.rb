@@ -43,4 +43,18 @@ RSpec.describe Topic, type: :model do
       it { is_expected.to eq author }
     end
   end
+
+  describe 'validates' do
+    subject { topic }
+    let(:topic) { create(:topic) }
+
+    it { is_expected.to be_valid }
+
+    describe 'title' do
+      it 'Expect to require a title' do
+        topic.title = ''
+        is_expected.not_to be_valid
+      end
+    end
+  end
 end

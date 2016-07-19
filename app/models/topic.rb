@@ -14,4 +14,6 @@
 class Topic < ApplicationRecord
   belongs_to :category, class_name: :TopicCategory, foreign_key: :category_id
   belongs_to :author, class_name: :User, foreign_key: :author_id
+
+  validates :title, presence: true
 end
