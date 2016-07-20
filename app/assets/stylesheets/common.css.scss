@@ -1,21 +1,7 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 a:hover {
   color: #c21756;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #555555;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-  color: #c21756;
-}
-
-.navbar-brand {
-  background: image-url('logo.png') no-repeat left center;
-  background-size: contain;
-  height: 45px;
-  width: 180px;
 }
